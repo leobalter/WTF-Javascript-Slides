@@ -1,0 +1,258 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    font-family: 'Droid Sans', helvetica, sans-serif;
+       background-color: #000;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input:focus {
+    outline: 0;
+}
+
+
+section.slide {
+    -webkit-box-shadow: 0 0 50px #c0c0c0;
+    -moz-box-shadow: 0 0 50px #c0c0c0;
+    box-shadow: 0 0 50px #c0c0c0;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    height: 700px;
+    padding: 20px;
+    position: relative;
+    width: 900px;
+    background-color: #fff;
+}
+
+section.inactiveslide {
+    opacity: 0.4;
+}
+
+section.activeslide {
+    opacity: 1;
+}
+
+footer {
+bottom: 40px;
+color: #404040;
+font-family: arial;
+font-size: 26px;
+position: absolute;
+text-align: center;
+width: 880px;
+left: 30px;
+}
+
+pre {
+    font-family: 'Inconsolata', monospace;
+    font-size: 16pt;
+    letter-spacing: -1px;
+    line-height: 20pt;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+pre.completo {
+    height: 600px;
+    margin-bottom: 0 !important;
+}
+
+pre:focus {
+    outline: 0;
+}
+
+div.phone {
+    -webkit-box-shadow: 0 0 30px #c0c0c0;
+    -moz-box-shadow: 0 0 30px #c0c0c0;
+    box-shadow: 0 0 30px #c0c0c0;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background-color: black;
+    height: 650px;
+    left: 50%;
+    margin-left: -190px;
+    margin-top: -325px;
+    position: absolute;
+    top: 50%;
+    width: 380px;
+}
+
+iframe {
+    -webkit-box-shadow: 0 0 20px #606060;
+    -moz-box-shadow: 0 0 20px #606060;
+    box-shadow: 0 0 20px #606060;
+    height: 560px;
+    margin-left: auto;
+    margin-top: 0;
+    position: relative;
+    top: 0;
+    width: 710px;
+    margin-right: auto;
+    display: block;
+}
+
+strong {
+    text-shadow: 1px 0 0 #606060;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #121B28;
+    margin-bottom: 14px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 36px;
+}
+
+h4 {
+    font-size: 32px;
+}
+
+h5 {
+    font-size: 28px;
+}
+
+h6 {
+    font-size: 24px;
+}
+
+h1.center {
+    margin-top: 280px;
+}
+
+ul {
+    padding: 60px;
+}
+
+ul li {
+    color: #121B28;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.8em;
+    list-style-type: disc;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+a {
+    color: #75B143;
+}
+
+img.slideImg {
+    display: block;
+    margin:  auto;
+}
+
+#pentatonica {
+    background: url(../img/pentatonica.gif) #fff center center scroll no-repeat;
+}
+
+#galinha {
+    background: url(../img/leo_galinha.jpg) #fff center center scroll no-repeat;
+    background-size: 45%;
+}
+
+#personare {
+    background: url(../img/personare.jpg) #fff center center scroll no-repeat;
+}
+
+#desconferencia {
+    background: url(../img/desconferencia.png) #fff center center scroll no-repeat;
+}
+
+#frontinrio {
+    background: url(../img/frontinrio.png) #fff center center scroll no-repeat;
+}
+
+#browserWars {
+    background: url(../img/browserwars.jpg) #fff center center scroll no-repeat;
+}
+
+#chaoticBrowsers {
+    background: url(../img/chaoticBrowsers.jpg) #fff center center scroll no-repeat;
+    background-size: 90%;
+}
+
+#browserKids {
+    background: url(../img/browserKids.jpg) #fff center center scroll no-repeat;
+    background-size: 80%;
+}
+
+#goat {
+    background: url(../img/goat.jpg) #fff center center scroll no-repeat;
+}
+
+#johnResig {
+    background: url(../img/johnResig.png) #fff center center scroll no-repeat;
+}

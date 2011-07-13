@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <title>WTF Javascript</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata&v2' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700&v2' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/slides.css">
+    <link rel="stylesheet" href="css/prettify.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>window.jQuery || document.write("<script src='js/jquery.js'>\x3C/script>")</script>
+
+    <script src="js/fathom.js"></script>
+    <script src="js/prettify.js"></script>
+
+    <script>
+        jQuery(function ($) {
+            $('pre').addClass('prettyprint').attr('tabIndex', 0);
+            prettyPrint();
+
+            $('#presentation').fathom({
+                slideTagName: 'section',
+                onActivateSlide: function() {
+                    console.log(this);
+                },
+                onDeactivateSlide: function() {
+                    console.log(this);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="presentation">
+    <section class="slide">
+        <h1>WTF Javascript</h1>
+
+        <h2>16 EDTED - Belo Horizonte - 2011</h2>
+
+        <footer>Leo Balter - <a href="http://twitter.com/leobalter" title="meu twitter!">@leobalter</a></footer>
+    </section>
+
+    <section class="slide" id="galinha">
+        <h1>Leo Balter</h1>
+    </section>
+
+
+    <section class="slide">
+        <h1>Leo Balter</h1>
+        <ul>
+            <li>Pós-graduando em Engenharia de Software</li>
+            <li>Profissão: Desenvolvedor Front End no <a href="http://www.personare.com.br">Personare</a></li>
+            <li>Editor, locutor e troll do <a href="http://www.desconferencia.com.br">Desconferência</a> Podcast</li>
+            <li>Organizador do <a href="http://www.frontinrio.com.br">FrontInRio</a></li>
+            <li>e bebo cerveja no <a href="http://horaextra.org">#horaextra</a></li>
+        </ul>
+    </section>
+
+    <section class="slide" id="personare">
+
+    </section>
+
+    <section class="slide" id="desconferencia">
+
+    </section>
+
+    <section class="slide" id="frontinrio">
+
+    </section>
+
+    <section class="slide">
+        <h1 class="center">Design Patterns vs Padrões</h1>
+    </section>
+
+    <section class="slide">
+        <h1>Padrões</h1>
+
+        <ul>
+            <li>Patterns</li>
+            <li>Standards</li>
+            <li>Defaults</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="pentatonica">
+        <h1>Escala Pentatônica</h1>
+    </section>
+
+    <section class="slide">
+        <h2>Você precisa sempre usar escala pentatônica?</h2>
+        <iframe width="710" height="560" src="http://www.youtube.com/embed/Ddn4MGaS3N4" frameborder="0"
+                allowfullscreen></iframe>
+    </section>
+
+    <section class="slide">
+        <h1 class="center">mas a vida é uma caixinha de surpresas!</h1>
+    </section>
+
+    <section class="slide">
+        <h1>Anti Padrões</h1>
+        <ul>
+            <li>Fórmulas perfeitas para seu projeto dar errado</li>
+            <li>Acredite nos anti padrões, eles não falham...</li>
+            <li>
+                WTF:
+                <pre>(1 < 2 < 3); // false!</pre>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h1 class="center">O Javascript já foi assustador no passado...</h1>
+    </section>
+
+    <section class="slide">
+        <h2>Ieiés</h2>
+        <pre>var isIE = document.all;</pre>
+        <iframe src="http://www.youtube.com/embed/x-bxeQ2ywfM" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section class="slide">
+        <h1>No túnel do tempo...</h1>
+        <ul>
+            <li>Criado por <strong>Brendan Eich</strong> em 10 dias</li>
+            <li>“Everyone makes mistakes, I made JavaScript.” —BE</li>
+            <li>Era pra ser parecido com o LISP, mas saiu parecido com o Java
+                <pre>(defun b (x) (if (> x 0) (a (- x 1)) (a (+ x 1)))) ;isso é LISP</pre>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide" id="browserWars">
+        <h1>A Guerra dos Browsers</h1>
+    </section>
+
+    <section class="slide">
+        <h1>A Guerra dos Browsers</h1>
+        <ul>
+            <li>O Javascript foi um bom frankenstein</li>
+            <li>Os desentendimentos entre os browsers fizeram sua API ficar confusa</li>
+            <li>E criou-se muita inconsistência</li>
+            <pre>
+function eventHandler(ev) {
+    if (!ev) ev = window.event;
+    var target = ev.target ? ev.target : ev.srcElement;
+
+    if (target.nodeType == 3) // Safari bug
+        target = target.parentNode;
+}
+            </pre>
+        </ul>
+    </section>
+
+    <section class="slide" id="chaoticBrowsers"></section>
+
+    <section class="slide">
+        <h1 class="center">As pessoas não valorizaram o Javascript</h1>
+
+        <h2>Inclusive foi por muito tempo considerado apenas uma linguagem de script</h2>
+    </section>
+
+    <section class="slide">
+        <h1 class="center">Mas Javascript não é script</h1>
+        <h2>nem é Java! (e muito menos LISP)</h2>
+    </section>
+
+    <section class="slide" id="browserKids">
+        <h1>Os browsers começam a ganhar força</h1>
+    </section>
+    
+    <section class="slide">
+        <h1>A mudança</h1>
+        <ul>
+            <li>Aplicativos web complexos começam a surgir (ajax, HTML5, etc)</li>
+            <li>Os browsers começam a oferecer mais consistência</li>
+            <li>Bibliotecas como o jQuery começam a torar fácil o desenvolvimento em Javascript</li>
+            <li>A linguagem não se limitou apenas ao browser (Node.js, Rhino, Appcelerator)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h1 class="center">Mesmo assim ainda temos alguns problemas e anti padrões!</h1>
+    </section>
+
+    <section class="slide" id="goat"></section>
+
+    <section class="slide">
+        <h1>Variáveis locais</h1>
+        <pre>
+var a = 1, b = 2;
+
+function printVars() {
+    console.log(a, b); // undefined, 2
+    var a = 5;
+    console.log(a);    // 5
+}</pre>
+        <footer>Variáveis locais são declaradas com a palavra chave <strong>var</strong> dentro de uma função ou escopo</footer>
+    </section>
+
+    <section class="slide">
+        <h1>Como isso é interpretado:</h1>
+        <pre>
+var a;
+var b;
+a = 1;
+b = 2;
+
+function printVars() {
+    var a;
+    console.log(a, b); // undefined, 2
+    a = 5;
+    console.log(a);    // 5
+}</pre>
+        <footer>Declaração de variáveis locais valem para todo o escopo de uma função</footer>
+    </section>
+
+    <section class="slide">
+        <h1>Retorno maldito!</h1>
+        <pre>
+function ieie() {
+    return
+        'rááááá!';
+}
+
+console.log(ieie()); // undefined</pre>
+    </section>
+
+
+    <section class="slide">
+        <h1>Retorno maldito!</h1>
+        <pre>
+function ieie() {
+    return;
+        'rááááá!';
+}
+
+console.log(ieie()); // undefined</pre>
+        <footer>o comando <strong>return</strong> não aguarda a próxima linha, mesmo que não tenha um ponto e vírgula</footer>
+    </section>
+
+    <section class="slide">
+        <h1>Funções</h1>
+        <pre>
+var resultado = true;
+
+if (resultado)
+    function conclusao() { return "excelente"; }
+else
+    function conclusao() { return "epa!"; }
+
+console.log(conclusao()); // "epa!"</pre>
+
+        <footer>Mesmo o resultado sendo verdadeiro, a função <strong>conclusão</strong> retorna "epa!"</footer>
+    </section>
+
+    <section class="slide">
+        <h1>Funções</h1>
+        <pre>
+function conclusao() { return "excelente"; }
+function conclusao() { return "epa!"; }
+
+var resultado;
+resultado = true;
+
+if (resultado) {}
+else {}
+
+console.log(conclusao()); // "epa!"</pre>
+    </section>
+
+    <section class="slide">
+        <h1>== e ===</h1>
+        <pre>
+console.log(90 == "90"); // true
+
+console.log(0 == false); // true
+
+console.log("0" == true); // true
+
+console.log("0" == 0); // true</pre>
+    </section>
+
+    <section class="slide">
+        <h1>== e ===</h1>
+        <pre>
+console.log(90 === "90"); // false
+
+console.log(0 !== false); // true
+
+console.log("0" === true); // false
+
+console.log("0" === 0); // false</pre>
+
+        <footer>o <strong>==</strong> só testa valores, enquanto o === testa tipo e valor</footer>
+    </section>
+
+    <section class="slide">
+        <h1>Números Octais, Decimais, Binários, etc</h1>
+
+        <pre>
+parseInt(042);   // 34
+parseInt(“042”); // 34
+
+parseInt(“042”, 10); // 42</pre>
+    </section>
+
+    <section class="slide">
+        <h1 class="center">Cuidado!</h1>
+    </section>
+
+    <section class="slide">
+        <h1>O parseInt não vai te salvar de todas!</h1>
+
+        <pre>parseInt(042, 10); // 34! WTF!</pre>
+
+        <footer>O zero à esquerda lutou e conseguiu seus direitos no Javascript!</footer>
+    </section>
+
+    <section class="slide">
+        <h1>Cuidado com os tipos!</h1>
+
+        <pre>133 + "7"; // "1337"</pre>
+
+        <footer>Somar um número a uma string gera apenas uma concatenação</footer>
+    </section>
+
+    <section class="slide">
+        <h1>E mais tipos...</h1>
+
+        <pre>1 < 2 < 3; // false</pre>
+    </section>
+
+    <section class="slide">
+        <h1>Por que???</h1>
+
+        <pre>1 < 2 < 3;
+(1 < 2) < 3;
+true < 3;</pre>
+    </section>
+
+    <section class="slide">
+        <h1 class="center">Como melhorar meu código Javascript?</h1>
+    </section>
+
+    <section class="slide">
+        <h1>Temos várias formas para escrever melhor:</h1>
+        <ul>
+            <li>Teste! Teste! Teste!</li>
+            <li>Use ferramentas de <strong>lint!</strong></li>
+            <li>Peça code review ou apenas compartilhe</li>
+            <li>Refatore depois de boas opiniões ou na falta delas</li>
+            <li>Lembre-se sempre que seu código não define você, é apenas um código</li>
+        </ul>
+
+    </section>
+
+    <section class="slide">
+        <h1>Ferramentas de teste</h1>
+        <ul>
+            <li>TDD e BDD: <strong>Jasmine</strong>, QUnit, JSUnit, etc</li>
+            <li>Há outros tipos de teste, mas não são tão importantes quanto TDD e BDD</li>
+            <li>Pode usar outros testes como o Selenium</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h1>Ferramentas de Lint</h1>
+        <ul>
+            <li>JSLint</li>
+            <li>JSHint</li>
+        </ul>
+
+        <h2>Lint foi um programa que apontou erros ou códigos suspeitos em C, o nome passou adiante para outras ferramentas que checavam a qualidade do código</h2>
+    </section>
+
+    <section class="slide">
+        <h1>JSLint</h1>
+        <ul>
+            <li>Douglas Crockford</li>
+            <li>"JSLint will hurt your feelings"</li>
+            <li>Escreva JS como ele escreve ou não use a ferramenta</li>
+            <li>for (var x in y) ... é proibido!</li>
+            <li><a href="http://www.jslint.com">http://www.jslint.com</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h1>JSHint</h1>
+        <ul>
+            <li>Comunidade - fork do JSLint iniciado por Anton Kovalyov</li>
+            <li>“does not tyrannize your code”</li>
+            <li>Estabeleça convenções entre sua própria equipe</li>
+            <li>Douglas Crockford diz que JSHint é para babacas</li>
+            <li><a href="http://jshint.com">http://jshint.com</a></li>
+        </ul>
+    </section>
+
+    <section class="slide" id="johnResig">
+        <footer><a href="http://twitter.com/#!/jeresig/status/38709496792485888">http://twitter.com/#!/jeresig/status/38709496792485888</a></footer>
+    </section>
+
+    <section class="slide">
+        <pre>function(foo) {
+    var i = -1
+    var str
+
+    for (var i = 0; i < 4; i++) {
+        debugger;
+        str += i;
+    }
+}()</pre>
+    </section>
+
+    <section class="slide">
+        <pre>The code check failed.
+
+Errors:
+Line 1 function(foo) {  Missing name in function declaration.
+
+Line 2 var i = -1  Missing semicolon.
+
+Line 3 var str  Missing semicolon.
+
+Line 5 for (var i = 0; i < 4; i++) {  'i' is already defined.
+
+Line 9 }()  Function declarations are not invocable. Wrap the whole function invocation in parens.
+
+Line 9  Stopping, unable to continue. (100% scanned).</pre>
+    </section>
+
+    <section class="slide"><h1>Outras dicas:</h1>
+        <ul>
+            <li>Entenda Javascript! Mesmo que use uma ferramenta simples como jQuery, Mootools, Coffescript, etc</li>
+            <li>Estude! Não falta material!</li>
+            <li>Use o console do seu browser, seja qual for!</li>
+            <li>Pare de usar o alert! Prefira console.log e debugger!</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h1>Compartilhe!</h1>
+
+        <h2>
+            <a href='https://developer.mozilla.org/en/JavaScript/Guide' title='Learning JavaScript'><img src='http://static.jsconf.us/promotejsh.gif' height='150' width='180' alt='Learning JavaScript'/></a>
+        </h2>
+        <h2><a href="http://github.com">github!</a></h2>
+        <h2><a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></h2>
+    </section>
+
+
+
+
+
+</div>
+
+<script>
+    var _gaq = [
+        ["_setAccount","UA-XXXXX-X"],
+        ["_trackPageview"]
+    ]; // Change UA-XXXXX-X to be your site's ID
+    (function(d, t) {
+        var g = d.createElement(t),s = d.getElementsByTagName(t)[0];
+        g.async = 1;
+        g.src = ("https:" == location.protocol ? "//ssl" : "//www") + ".google-analytics.com/ga.js";
+        s.parentNode.insertBefore(g, s)
+    }(document, "script"));
+</script>
+
+</body>
+</html>
