@@ -24,10 +24,40 @@
             $('#presentation').fathom({
                 slideTagName: 'section',
                 onActivateSlide: function() {
-                    console.log(this);
+                    var $t = $(this);
+                    var hasProcessed = $t.data('hasProcessed');
+                    var hasBg = $t.data('bg');
+                    var hasBgSz = $t.data('bgsize');
+                    var hasYoutube = $t.data('youtube');
+                    var cssProps = {};
+
+                    if (hasProcessed) {
+                        return;
+                    }
+
+
+                    if (hasBg) {
+                        cssProps.backgroundImage = "url(img/"+hasBg+")";
+                        cssProps.backgroundPosition = "center center";
+                        cssProps.backgroundRepeat = "no-repeat";
+                        cssProps.backgroundAttachment = "scroll";
+                    }
+
+                    if (hasBgSz) {
+                        cssProps.backgroundSize = hasBgSz;
+                    }
+
+                    $t.css(cssProps);
+
+                    if (hasYoutube) {
+                        $t.append('<iframe class="youtubeVideo" width="710" height="560" src="http://www.youtube.com/embed/'+hasYoutube+'" frameborder="0" allowfullscreen></iframe>');
+                    }
+
+                    $t.data('hasProcessed', true);
                 },
                 onDeactivateSlide: function() {
-                    console.log(this);
+                    var $t = $(this);
+
                 }
             });
         });
@@ -44,10 +74,16 @@
         <footer>Leo Balter - <a href="http://twitter.com/leobalter" title="meu twitter!">@leobalter</a></footer>
     </section>
 
-    <section class="slide" id="galinha">
+    <section class="slide" data-bg="leo_galinha.jpg" data-bgsize="45%">
         <h1>Leo Balter</h1>
     </section>
 
+
+    <section class="slide" data-bg="personare.jpg"></section>
+
+    <section class="slide" data-bg="desconferencia.png"></section>
+
+    <section class="slide" data-bg="frontinrio.png"></section>
 
     <section class="slide">
         <h1>Leo Balter</h1>
@@ -60,16 +96,22 @@
         </ul>
     </section>
 
-    <section class="slide" id="personare">
+    <section class="slide">
+        <h1>Javascript é bom</h1>
 
+        <h2>Mas o que é preciso pra escrever um bom código?</h2>
     </section>
 
-    <section class="slide" id="desconferencia">
-
+    <section class="slide" data-bg="goodparts.jpg">
+        
     </section>
 
-    <section class="slide" id="frontinrio">
-
+    <section class="slide">
+        <ul>
+            <li>Design Patterns</li>
+            <li>Anti Padrões</li>
+            <li>Convenções</li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -90,10 +132,8 @@
         <h1>Escala Pentatônica</h1>
     </section>
 
-    <section class="slide">
+    <section class="slide" data-youtube="Ddn4MGaS3N4">
         <h2>Você precisa sempre usar escala pentatônica?</h2>
-        <iframe width="710" height="560" src="http://www.youtube.com/embed/Ddn4MGaS3N4" frameborder="0"
-                allowfullscreen></iframe>
     </section>
 
     <section class="slide">
@@ -116,10 +156,9 @@
         <h1 class="center">O Javascript já foi assustador no passado...</h1>
     </section>
 
-    <section class="slide">
+    <section class="slide" data-youtube="x-bxeQ2ywfM">
         <h2>Ieiés</h2>
         <pre>var isIE = document.all;</pre>
-        <iframe src="http://www.youtube.com/embed/x-bxeQ2ywfM" frameborder="0" allowfullscreen></iframe>
     </section>
 
     <section class="slide">
