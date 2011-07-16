@@ -33,7 +33,6 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
     font-family: 'Droid Sans', helvetica, sans-serif;
-       background-color: #000;
 }
 
 ol, ul {
@@ -74,7 +73,6 @@ section.slide {
     padding: 20px;
     position: relative;
     width: 900px;
-    background-color: #fff;
 }
 
 section.inactiveslide {
@@ -214,49 +212,28 @@ img.slideImg {
     margin:  auto;
 }
 
-#pentatonica {
-    background: url(../img/pentatonica.gif) #fff center center scroll no-repeat;
+/* colors definitions */
+
+.red {
+    color: #F00;
 }
 
-#galinha {
-    background: url(../img/leo_galinha.jpg) #fff center center scroll no-repeat;
-    background-size: 45%;
+.blue {
+    color: #00F;
 }
 
-#personare {
-    background: url(../img/personare.jpg) #fff center center scroll no-repeat;
+.white {
+    color: #fff;
 }
 
-#desconferencia {
-    background: url(../img/desconferencia.png) #fff center center scroll no-repeat;
+.yellow {
+    color: yellow;
 }
 
-#frontinrio {
-    background: url(../img/frontinrio.png) #fff center center scroll no-repeat;
+.green {
+    color: green;
 }
 
-#browserWars {
-    background: url(../img/browserwars.jpg) #fff center center scroll no-repeat;
-}
-
-#chaoticBrowsers {
-    background: url(../img/chaoticBrowsers.jpg) #fff center center scroll no-repeat;
-    background-size: 90%;
-}
-
-#browserKids {
-    background: url(../img/browserKids.jpg) #fff center center scroll no-repeat;
-    background-size: 80%;
-}
-
-#goat {
-    background: url(../img/goat.jpg) #fff center center scroll no-repeat;
-}
-
-#johnResig {
-    background: url(../img/johnResig.png) #fff center center scroll no-repeat;
-}
-
-#goodparts {
-    background: url(../img/goodparts.jpg) #fff center center scroll no-repeat;
+.orange {
+    color: orange;
 }

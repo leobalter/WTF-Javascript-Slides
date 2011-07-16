@@ -15,57 +15,12 @@
 
     <script src="js/fathom.js"></script>
     <script src="js/prettify.js"></script>
-
-    <script>
-        jQuery(function ($) {
-            $('pre').addClass('prettyprint').attr('tabIndex', 0);
-            prettyPrint();
-
-            $('#presentation').fathom({
-                slideTagName: 'section',
-                onActivateSlide: function() {
-                    var $t = $(this);
-                    var hasProcessed = $t.data('hasProcessed');
-                    var hasBg = $t.data('bg');
-                    var hasBgSz = $t.data('bgsize');
-                    var hasYoutube = $t.data('youtube');
-                    var cssProps = {};
-
-                    if (hasProcessed) {
-                        return;
-                    }
-
-
-                    if (hasBg) {
-                        cssProps.backgroundImage = "url(img/"+hasBg+")";
-                        cssProps.backgroundPosition = "center center";
-                        cssProps.backgroundRepeat = "no-repeat";
-                        cssProps.backgroundAttachment = "scroll";
-                    }
-
-                    if (hasBgSz) {
-                        cssProps.backgroundSize = hasBgSz;
-                    }
-
-                    $t.css(cssProps);
-
-                    if (hasYoutube) {
-                        $t.append('<iframe class="youtubeVideo" width="710" height="560" src="http://www.youtube.com/embed/'+hasYoutube+'" frameborder="0" allowfullscreen></iframe>');
-                    }
-
-                    $t.data('hasProcessed', true);
-                },
-                onDeactivateSlide: function() {
-                    var $t = $(this);
-
-                }
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
 <div id="presentation">
+
     <section class="slide">
         <h1>WTF Javascript</h1>
 
@@ -83,7 +38,9 @@
 
     <section class="slide" data-bg="desconferencia.png"></section>
 
-    <section class="slide" data-bg="frontinrio.png"></section>
+    <section class="slide" data-bg="frontinrio.png" data-bgsize="auto 100%"></section>
+
+    <section class="slide" data-bg="horaextraBarra.jpg" data-bgsize="auto 100%"></section>
 
     <section class="slide">
         <h1>Leo Balter</h1>
@@ -102,7 +59,7 @@
         <h2>Mas o que é preciso pra escrever um bom código?</h2>
     </section>
 
-    <section class="slide" data-bg="goodparts.jpg">
+    <section class="slide" data-bg="goodparts.jpg" data-bgsize="auto 100%">
         
     </section>
 
@@ -128,7 +85,35 @@
         </ul>
     </section>
 
-    <section class="slide" id="pentatonica">
+    <section class="slide">
+        <pre>(function(window, undefined) {
+    var MyObj = (function () {
+        var MyObj = function () {
+            return new MyObj.fn.init();
+        };
+        MyObj.fn = MyObj.prototype = {
+            init : function () {
+                return this;
+            },
+            count : function () {
+                for(var i in this) {
+                    if (this.hasOwnProperty(i)) {
+                        console.log("Element "+i+" is "+this[i]);
+                    }
+                }
+            }
+        };
+        MyObj.fn.init.prototype = MyObj.fn;
+        MyObj.test = 'yay';
+
+        return MyObj;
+    }());
+            
+    window.MyObj = MyObj;
+}(window));</pre>
+    </section>
+
+    <section class="slide" data-bg="pentatonica.gif">
         <h1>Escala Pentatônica</h1>
     </section>
 
@@ -172,7 +157,7 @@
         </ul>
     </section>
 
-    <section class="slide" id="browserWars">
+    <section class="slide" id="browserWars" data-bg="browserwars.jpg">
         <h1>A Guerra dos Browsers</h1>
     </section>
 
@@ -194,7 +179,7 @@ function eventHandler(ev) {
         </ul>
     </section>
 
-    <section class="slide" id="chaoticBrowsers"></section>
+    <section class="slide" data-bg="chaoticBrowsers.jpg" data-bgsize="100% 100%"></section>
 
     <section class="slide">
         <h1 class="center">As pessoas não valorizaram o Javascript</h1>
@@ -207,7 +192,7 @@ function eventHandler(ev) {
         <h2>nem é Java! (e muito menos LISP)</h2>
     </section>
 
-    <section class="slide" id="browserKids">
+    <section class="slide" data-bg="browserKids.jpg" data-bgsize="85%">
         <h1>Os browsers começam a ganhar força</h1>
     </section>
     
@@ -225,7 +210,7 @@ function eventHandler(ev) {
         <h1 class="center">Mesmo assim ainda temos alguns problemas e anti padrões!</h1>
     </section>
 
-    <section class="slide" id="goat"></section>
+    <section class="slide" data-bg="goat.jpg" data-bgsize="auto 100%"></section>
 
     <section class="slide">
         <h1>Variáveis locais</h1>
@@ -402,7 +387,6 @@ true < 3;</pre>
         <ul>
             <li>TDD e BDD: <strong>Jasmine</strong>, QUnit, JSUnit, etc</li>
             <li>Há outros tipos de teste, mas não são tão importantes quanto TDD e BDD</li>
-            <li>Pode usar outros testes como o Selenium</li>
         </ul>
     </section>
 
@@ -413,7 +397,7 @@ true < 3;</pre>
             <li>JSHint</li>
         </ul>
 
-        <h2>Lint foi um programa que apontou erros ou códigos suspeitos em C, o nome passou adiante para outras ferramentas que checavam a qualidade do código</h2>
+        <h3>Lint foi um programa que apontou erros ou códigos suspeitos em C, o nome passou adiante para outras ferramentas que checavam a qualidade do código</h2>
     </section>
 
     <section class="slide">
@@ -427,6 +411,8 @@ true < 3;</pre>
         </ul>
     </section>
 
+    <section class="slide" data-bg="jslint.png" data-bgsize="95%"></section>
+
     <section class="slide">
         <h1>JSHint</h1>
         <ul>
@@ -438,69 +424,81 @@ true < 3;</pre>
         </ul>
     </section>
 
-    <section class="slide" id="johnResig">
+    <section class="slide" data-bg="jshint.png" data-bgsize="95%"></section>
+
+    <section class="slide" data-bg="johnResig.png">
         <footer><a href="http://twitter.com/#!/jeresig/status/38709496792485888">http://twitter.com/#!/jeresig/status/38709496792485888</a></footer>
     </section>
 
-    <section class="slide">
-        <pre>function(foo) {
-    var i = -1
-    var str
+    <section class="slide" data-bg="jshinter1.png" data-bgsize="95%"></section>
+    <section class="slide" data-bg="jshinter2.png" data-bgsize="95%"></section>
 
-    for (var i = 0; i < 4; i++) {
-        debugger;
-        str += i;
-    }
-}()</pre>
-    </section>
-
-    <section class="slide">
-        <pre>The code check failed.
-
-Errors:
-Line 1 function(foo) {  Missing name in function declaration.
-
-Line 2 var i = -1  Missing semicolon.
-
-Line 3 var str  Missing semicolon.
-
-Line 5 for (var i = 0; i < 4; i++) {  'i' is already defined.
-
-Line 9 }()  Function declarations are not invocable. Wrap the whole function invocation in parens.
-
-Line 9  Stopping, unable to continue. (100% scanned).</pre>
-    </section>
+    <section class="slide" data-bg="jshintcli.png"></section>
 
     <section class="slide"><h1>Outras dicas:</h1>
         <ul>
-            <li>Entenda Javascript! Mesmo que use uma ferramenta simples como jQuery, Mootools, Coffescript, etc</li>
+            <li>Entenda <span class="red">Javascript</span>! Mesmo que use uma ferramenta simples como jQuery, Mootools, Coffescript, etc</li>
             <li>Estude! Não falta material!</li>
             <li>Use o console do seu browser, seja qual for!</li>
-            <li>Pare de usar o alert! Prefira console.log e debugger!</li>
+            <li>Pare de usar o alert! Prefira <span class="blue">console.log</span> e <span class="blue">debugger</span>!</li>
         </ul>
+    </section>
+
+    <section class="slide" data-script="semDebugger">
+        <h1 class="center">Exemplo sem Debugger</h1>
+
+        <h2><em>acompanhe no console!</em></h2>
+    </section>
+
+    <section class="slide" data-script="comDebugger">
+        <h1 class="center">Exemplo com Debugger</h1>
+
+        <h2><em>acompanhe no console!</em></h2>
     </section>
 
     <section class="slide">
         <h1>Compartilhe!</h1>
-
-        <h2>
-            <a href='https://developer.mozilla.org/en/JavaScript/Guide' title='Learning JavaScript'><img src='http://static.jsconf.us/promotejsh.gif' height='150' width='180' alt='Learning JavaScript'/></a>
-        </h2>
-        <h2><a href="http://github.com">github!</a></h2>
-        <h2><a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></h2>
+        <ul>
+            <li><a href="http://github.com">GitHub e Gists</a></li>
+            <li><a title="JSBin" href="http://jsbin.com">JSBin</a></li>
+            <li><a title="JSFiddle" href="http://jsfiddle.net">JSFiddle.net</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/">Mozilla Developers Network</a></li>
+        </ul>
     </section>
 
+    <section class="slide" data-bg="codeReview1.png" data-bgsize="auto 98%"></section>
+    <section class="slide" data-bg="codeReview2.png" data-bgsize="auto 98%"></section>
 
+    <section class="slide">
+        <h1 class="center red">Fuja do w3schools!</h1>
+    </section>
 
+    <section class="slide" data-bg="w3fools.png"></section>
 
+    <section class="slide">
+        <h1>O futuro do Javascript é bom?</h1>
+        <ul>
+            <li>JSON</li>
+            <li>HTML5</li>
+            <li>Node.js</li>
+            <li>Appcelerator</li>
+        </ul>
+    </section>
 
+    <section class="slide" data-bg="jason.jpg" data-bgsize="auto 100%"></section>
+
+    <section class="slide">
+        <h1 class="center">Obrigado e vamos pro #horaextra!</h1>
+
+        <footer>Leo Balter - <a href="http://twitter.com/leobalter">@leobalter</a></footer>
+    </section>
 </div>
 
 <script>
     var _gaq = [
-        ["_setAccount","UA-XXXXX-X"],
+        ["_setAccount","UA-9065037-8"],
         ["_trackPageview"]
-    ]; // Change UA-XXXXX-X to be your site's ID
+    ];
     (function(d, t) {
         var g = d.createElement(t),s = d.getElementsByTagName(t)[0];
         g.async = 1;

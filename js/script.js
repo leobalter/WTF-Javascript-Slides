@@ -1,21 +1,61 @@
 jQuery(function ($) {
+    window.slideFunctions = {
+        comDebugger : function () {
+            var a = 123,
+                    b = 234,
+                    c = 345,
+                    minhaArray = [a, b];
+
+            debugger;
+
+            console.log(minhaArray);
+
+            minhaArray.push(c);
+
+            console.log(minhaArray);
+
+            console.error('my fake error! yay');
+
+            debugger;
+        },
+
+        semDebugger : function () {
+            var a = 123,
+                    b = 234,
+                    c = 345,
+                    minhaArray = [a, b];
+
+            console.log(minhaArray);
+
+            minhaArray.push(c);
+
+            console.log(minhaArray);
+        }
+    };
+
     $('pre').addClass('prettyprint').attr('tabIndex', 0);
     prettyPrint();
 
     $('#presentation').fathom({
         slideTagName: 'section',
         onActivateSlide: function() {
-            var $t = $(this);
-            var hasProcessed = $t.data('hasProcessed');
-            var hasBg = $t.data('bg');
-            var hasBgSz = $t.data('bgsize');
-            var hasYoutube = $t.data('youtube');
-            var cssProps = {};
+            var $t, hasProcessed, hasBg, hasBgSz, hasYoutube, cssProps, hasScript;
+
+            $t = $(this);
+            hasProcessed = $t.data('hasProcessed');
+            hasBg = $t.data('bg');
+            hasBgSz = $t.data('bgsize');
+            hasYoutube = $t.data('youtube');
+            cssProps = {};
+            hasScript = $t.data('script');
 
             if (hasProcessed) {
                 return;
             }
 
+            if (slideFunctions && slideFunctions[hasScript]) {
+                slideFunctions[hasScript]();
+            }
 
             if (hasBg) {
                 cssProps.backgroundImage = "url(img/" + hasBg + ")";
@@ -41,4 +81,5 @@ jQuery(function ($) {
 
         }
     });
+
 });
